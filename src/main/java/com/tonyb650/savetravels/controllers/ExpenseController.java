@@ -23,12 +23,6 @@ public class ExpenseController {
 	
 	@Autowired
 	private ExpenseService expenseService;
-	
-//	private final ExpenseService expenseService;
-//	
-//	public ExpenseController(ExpenseService expenseService) {
-//		this.expenseService=expenseService;
-//	}
 
 	@GetMapping("")
 	public String index() {

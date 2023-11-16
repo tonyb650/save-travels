@@ -32,7 +32,6 @@
 				<input type="submit" class="btn btn-success" value="Update"/>
 				<a href="/dashboard" class="btn btn-secondary">Go Back</a>
 			</div>
-
 		</form:form>
 	</div>
 </body>

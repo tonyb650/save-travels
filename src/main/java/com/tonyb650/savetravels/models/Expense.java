@@ -34,8 +34,6 @@ public class Expense {
 	private String vendor;
 	
 	@NotNull(message = "An amount must be entered")
-//	 maybe could have used data type BigDecimal and then validated with @DecimalMin(.01) ???
-//	@Min(0.01) <- this doesn't work
 	@DecimalMin(value="0.0", inclusive=false, message = "Amount must be greater than $0.00")
 	private BigDecimal amount;
 
@@ -125,6 +123,4 @@ public class Expense {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
-	
 }

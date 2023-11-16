@@ -12,37 +12,34 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
-<div class="container">
-	<h2>Save Travels</h2>
-	<table class="table border">
-		<thead>
-			<tr>
-				<th>Expense</th>
-				<th>Vendor</th>
-				<th>Amount</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="expense" items="${ expenseList }">
-			<tr>
-				<td><a href="/expense/${expense.id}/detail"><c:out value="${ expense.name }"/></a></td>
-				<td><c:out value="${ expense.vendor }"/></td>
-				
-				<td><fmt:formatNumber type="currency" value="${expense.amount}" /></td>
-				<td class="d-flex">
-
-						<a href="/expense/${expense.id}/edit" class="btn btn-sml btn-secondary mx-2">edit</a>
-						<form action="/expense/${expense.id}/delete" method="post" attribute="expense">
-							<input type="hidden" name="_method" value="delete"/>
-							<input type="submit" class="btn btn-sml btn-secondary" value="delete"/>
-						</form>
-
-				</td>
-			</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+	<div class="container">
+		<h2>Save Travels</h2>
+		<table class="table border">
+			<thead>
+				<tr>
+					<th>Expense</th>
+					<th>Vendor</th>
+					<th>Amount</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="expense" items="${ expenseList }">
+				<tr>
+					<td><a href="/expense/${expense.id}/detail"><c:out value="${ expense.name }"/></a></td>
+					<td><c:out value="${ expense.vendor }"/></td>
+					<td><fmt:formatNumber type="currency" value="${expense.amount}" /></td>
+					<td class="d-flex">
+							<a href="/expense/${expense.id}/edit" class="btn btn-sml btn-secondary mx-2">edit</a>
+							<form action="/expense/${expense.id}/delete" method="post" attribute="expense">
+								<input type="hidden" name="_method" value="delete"/>
+								<input type="submit" class="btn btn-sml btn-secondary" value="delete"/>
+							</form>
+					</td>
+				</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 		<h2>Add an expense</h2>
 		<form:form action="/expense" method="post" modelAttribute="expense">
 			<form:label path="name" class="form-label" for="name">Expense Name</form:label>
@@ -59,6 +56,6 @@
 			<form:input path="description" class="form-control" type="text" id="description" name="description"/>
 			<input type="submit" class="btn btn-secondary" value="Submit"/>
 		</form:form>
-</div>
+	</div>
 </body>
 </html>
